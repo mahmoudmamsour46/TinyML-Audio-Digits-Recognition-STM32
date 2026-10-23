@@ -11,9 +11,10 @@ This project is an independent practical implementation and edge deployment of t
 > **"A novel framework for deployment of CNN models using post-training quantization on microcontroller"** *(Microprocessors and Microsystems, 2022)*
 
 ### 🎯 Research Implementation & Scope
-- **Paper Reproduction on a More Constrained Target:** While the original paper targeted an **STM32F407** microcontroller (192 KB RAM, 1 MB Flash), this project adapts and deploys the framework onto the more constrained **STM32F401RE** (64 KB RAM).
-- **Memory Footprint Optimization:** To fit within the 64 KB RAM constraint of the STM32F401 (where unbuffered intermediate activations in the paper required ~110 KB), layer-by-layer **Ping-Pong activation buffers** were employed, keeping peak SRAM under **18.8 KB**.
-- **Accuracy Parity:** Preserves the paper's reported classification performance (~85% Top-1 accuracy) with zero structural drift.
+- **From-Scratch Open-Source Implementation:** The original research paper did not publish or release an open-source codebase. This repository provides an independent, from-scratch Python and bare-metal Embedded C implementation developed entirely by Mahmoud Mansour.
+- **Hardware Adaptation on a More Constrained Target:** While the original paper evaluated on an **STM32F407** microcontroller (192 KB RAM, 1 MB Flash), this work adapts, optimizes, and verifies the pipeline on the more resource-constrained **STM32F401RE** (64 KB RAM).
+- **Memory Footprint Optimization:** To fit within the tighter 64 KB RAM constraint of the STM32F401 (where unbuffered activations in the paper took ~110 KB), layer-by-layer **Ping-Pong activation buffers** were designed and implemented, reducing peak SRAM to **18.8 KB**.
+- **Accuracy Parity:** Confirms the paper's reported classification performance (~85% Top-1 accuracy) with rigorous verification and McNemar's test.
 
 ---
 
@@ -185,11 +186,30 @@ Custom bare-metal C inference engine compiled and verified via ST-Link on STM32C
 
 ---
 
-## 📜 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 📚 Academic Citation & Paper Reference
+If you find this practical implementation helpful in your research or edge AI projects, please cite the original foundational research paper:
+
+```bibtex
+@article{SAILESH2022104634,
+  title = {A novel framework for deployment of CNN models using post-training quantization on microcontroller},
+  journal = {Microprocessors and Microsystems},
+  volume = {94},
+  pages = {104634},
+  year = {2022},
+  issn = {0141-9331},
+  doi = {https://doi.org/10.1016/j.micpro.2022.104634},
+  author = {Sailesh M. and Selvakumar K. and Narayanan Prasanth}
+}
+```
 
 ---
 
-## 👨‍💻 Author
+## 📜 License & Intellectual Property
+- **Source Code License:** The software codebase, Python tooling, DSP implementations, and embedded C firmware in this repository are licensed under the **[MIT License](LICENSE)** &copy; 2026 Mahmoud Mansour.
+- **Academic Disclaimer:** All theoretical algorithms, concepts, and architectural designs referenced from the published paper belong to their respective authors and Elsevier B.V.
+
+---
+
+## 👨‍💻 Author & Implementation
 **Mahmoud Mansour**  
 - GitHub: [@mahmoudmamsour46](https://github.com/mahmoudmamsour46)
