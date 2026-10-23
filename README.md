@@ -52,14 +52,14 @@ flowchart LR
 | Layer | Operation | Output Shape | Parameters |
 | :--- | :--- | :--- | :--- |
 | **Input** | Audio Spectrogram | `32 × 39 × 1` | 0 |
-| **Conv2D_1** | 16 filters (3×3), ReLU, Stride 1 | `30 × 37 × 16` | 160 |
-| **Pool_1** | MaxPooling (2×2), Stride 2 | `15 × 18 × 16` | 0 |
-| **Conv2D_2** | 32 filters (3×3), ReLU, Stride 1 | `13 × 16 × 32` | 4,640 |
-| **Pool_2** | MaxPooling (2×2), Stride 2 | `6 × 8 × 32` | 0 |
-| **Conv2D_3** | 64 filters (3×3), ReLU, Stride 1 | `4 × 6 × 64` | 18,496 |
-| **Pool_3** | MaxPooling (2×2), Stride 2 | `2 × 3 × 64` | 0 |
-| **Flatten** | Reshape | `384` | 0 |
-| **Dense** | Fully Connected + Softmax | `10` (Digits 0–9) | 3,850 |
+| **Conv2D_1** | 12 filters (3×3), ReLU, Same padding | `32 × 39 × 12` | 120 |
+| **Pool_1** | MaxPooling (2×2), Stride 2, Same padding | `16 × 20 × 12` | 0 |
+| **Conv2D_2** | 24 filters (3×3), ReLU, Same padding | `16 × 20 × 24` | 2,616 |
+| **Pool_2** | MaxPooling (2×2), Stride 2, Same padding | `8 × 10 × 24` | 0 |
+| **Conv2D_3** | 48 filters (3×3), ReLU, Same padding | `8 × 10 × 48` | 10,416 |
+| **Pool_3** | MaxPooling (1×5), Valid padding | `8 × 6 × 48` | 0 |
+| **Flatten** | Reshape (`8 × 6 × 48`) | `2,304` | 0 |
+| **Dense (FC)** | Fully Connected + Softmax | `12` (Digits 0–9 + background + unknown) | 27,660 |
 | **Total** | | | **40,812 parameters** |
 
 ---
