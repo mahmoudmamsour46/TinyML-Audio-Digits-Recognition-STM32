@@ -7,8 +7,13 @@
 
 An end-to-end TinyML audio digit recognition system (digits 0–9) trained on Google Speech Commands and deployed onto an ARM Cortex-M4 microcontroller (**STM32F401RE / STM32F411RE**).
 
-This project implements post-training quantization methodologies benchmarked against the Elsevier (2022) paper:
-> *"A novel framework for deployment of CNN models using post-training quantization on microcontroller"*
+This project is an independent practical implementation and edge deployment of the methodology presented in the Elsevier (2022) research paper:
+> **"A novel framework for deployment of CNN models using post-training quantization on microcontroller"** *(Microprocessors and Microsystems, 2022)*
+
+### 🎯 Research Implementation & Scope
+- **Paper Reproduction on a More Constrained Target:** While the original paper targeted an **STM32F407** microcontroller (192 KB RAM, 1 MB Flash), this project adapts and deploys the framework onto the more constrained **STM32F401RE** (64 KB RAM).
+- **Memory Footprint Optimization:** To fit within the 64 KB RAM constraint of the STM32F401 (where unbuffered intermediate activations in the paper required ~110 KB), layer-by-layer **Ping-Pong activation buffers** were employed, keeping peak SRAM under **18.8 KB**.
+- **Accuracy Parity:** Preserves the paper's reported classification performance (~85% Top-1 accuracy) with zero structural drift.
 
 ---
 
