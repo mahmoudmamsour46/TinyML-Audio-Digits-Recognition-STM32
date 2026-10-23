@@ -162,6 +162,29 @@ python generate_linear_c_files.py
 
 ---
 
+## 📸 Experimental Validation & Live Hardware Deployment
+
+### 1. Audio Processing & Spectrogram Extraction
+Raw 1-second audio frame transformed via 256-point Radix-2 FFT into a `32 × 39` spectrogram:
+![Audio Spectrogram](docs/images/spectrogram_feature_extraction.png)
+
+### 2. On-Device Real-Time Inference (UART Serial Output)
+Live spoken digit detection running on the STM32 microcontroller, showing classification prediction, top-k candidate scores, and an on-device latency of **208 ms**:
+![Real-Time Inference Log](docs/images/uart_realtime_inference.jpg)
+
+### 3. Physical Hardware Wiring & Lab Test Bench
+Embedded hardware prototype featuring the **STM32F401 Black Pill**, electret microphone module, and ST-Link V2 programmer:
+
+| Hardware Circuit Wiring | Bench Testing & Flashing |
+| :---: | :---: |
+| ![Hardware Wiring](docs/images/hardware_circuit_wiring.jpg) | ![Lab Bench Setup](docs/images/hardware_lab_bench.jpg) |
+
+### 4. Firmware Deployment in STM32CubeIDE
+Custom bare-metal C inference engine compiled and verified via ST-Link on STM32CubeIDE:
+![STM32CubeIDE Verification](docs/images/stm32cubeide_deployment.jpg)
+
+---
+
 ## 📜 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
