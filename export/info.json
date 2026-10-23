@@ -1,0 +1,22 @@
+{
+  "mean": -35.61635208129883,
+  "std": 24.129728317260742,
+  "test_accuracy_float32": 0.9297022512708787,
+  "n_test": 6885,
+  "classes": [
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "background",
+    "unknown"
+  ],
+  "tensorflow": "2.21.0",
+  "numpy": "2.1.3"
+}

@@ -1,0 +1,9 @@
+{
+  "accuracy_float32": 0.9297022512708787,
+  "accuracy_int8": 0.929121278140886,
+  "accuracy_drop": 0.0005809731299927234,
+  "size_float32_kb": 159.421875,
+  "size_int8_kb": 40.13671875,
+  "compression_ratio": 3.971970802919708,
+  "n_params": 40812
+}

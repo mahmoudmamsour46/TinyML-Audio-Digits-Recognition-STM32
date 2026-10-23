@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# IDE and metadata
+.metadata/
+.vscode/
+*.launch
+
+# Build and binary artifacts
+wheels/
+catboost_info/
+export/*.o
+export/*.elf
+export/*.bin
+export/*.hex
+STM CODE/*/Debug/
+STM CODE/*/Release/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Unrelated experiments & other paper assets
+PH/
+solar_tinyml/
+STM CODE/solar_radiation_model_v1/
+organize_paper5.py
+run_solar_ptq_benchmark.py
+export/backup_pot/
+
+export/test.npz
